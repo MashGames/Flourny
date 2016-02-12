@@ -10,9 +10,9 @@ public class SpawnerEditor : Editor
         Object_Spawner myTarget = (Object_Spawner)target;
         myTarget.SetMinMaxSpawnTime( myTarget.minSpawnTime, myTarget.maxSpawnTime );
 
-        if(!myTarget.HasObjects())
-        {
-            myTarget.Initialize();
-        }
+        //if(!myTarget.HasObjects())
+        //{
+        //    myTarget.Initialize();
+        //}
     }
 }

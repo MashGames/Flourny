@@ -4,12 +4,21 @@
 [System.Serializable]
 public class Object_Spawner : MonoBehaviour
 {
+    public enum SpawnType
+    {
+        intoParent,
+        intoWorld
+    }
+    public SpawnType spawnType;
+
     public GameObject[] obj;
+
+    public Transform parentListToSpawnInto;
 
     [Range( 0.0f, 6.0f )]
     public float minSpawnTime = 3f;
 
-    [Range( 0.0f, 6.0f )]
+    [Range( 0.0f, 12.0f )]
     public float maxSpawnTime = 3f;
 
     bool isRunning = false;
@@ -18,8 +27,8 @@ public class Object_Spawner : MonoBehaviour
 
     public void Initialize()
     {
-       obj = new GameObject[1];
-       obj[0] = Resources.Load("Spawning/SpawningExampleObj") as GameObject;
+      // obj = new GameObject[1];
+      // obj[0] = Resources.Load("Spawning/SpawningExampleObj") as GameObject;
     }
 
     public void Start()
@@ -44,19 +53,39 @@ public class Object_Spawner : MonoBehaviour
 
             if( timeSinceLastSpawn > timeTillNextSpawn )
             {
-                Spawn();
+                if( spawnType  == SpawnType.intoParent)
+                {
+                    SpawnIntoList();
+                }
+                else
+                {
+                    Spawn();
+                }
                 timeSinceLastSpawn = 0.0f;
             }
         }
     }
     void Spawn()
     {
-
       print("spawnObject");
       Vector3 randomPos = GetSpawnPos();
-      Instantiate( obj[GetRandFromObjList()], transform.position + randomPos, Quaternion.identity);
+      Instantiate( obj[GetRandFromObjList()], transform.position + randomPos, Quaternion.identity );
       timeTillNextSpawn = Random.Range( minSpawnTime, maxSpawnTime );
     }
+
+    void SpawnIntoList()
+    {
+        print( "SpawnIntoList spawnObject" );
+        Vector3 randomPos = GetSpawnPos();
+        GameObject newObj =  (GameObject)Instantiate( obj[GetRandFromObjList()], transform.position + randomPos, Quaternion.identity );
+
+        if( parentListToSpawnInto )
+        newObj.transform.SetParent(parentListToSpawnInto);
+
+        timeTillNextSpawn = Random.Range( minSpawnTime, maxSpawnTime );
+    }
+
+
     public virtual Vector3 GetSpawnPos()
     {
         return Random.insideUnitSphere* 1.0f;
