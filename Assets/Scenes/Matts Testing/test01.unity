@@ -1061,6 +1061,48 @@ Transform:
   - {fileID: 2026467454}
   m_Father: {fileID: 1292107390}
   m_RootOrder: 0
+--- !u!1001 &128832397
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 457570, guid: c42a7173ae7a52a4597bb6ba29e377e3, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -11.4320583
+      objectReference: {fileID: 0}
+    - target: {fileID: 457570, guid: c42a7173ae7a52a4597bb6ba29e377e3, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -1.19130039
+      objectReference: {fileID: 0}
+    - target: {fileID: 457570, guid: c42a7173ae7a52a4597bb6ba29e377e3, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -.682230949
+      objectReference: {fileID: 0}
+    - target: {fileID: 457570, guid: c42a7173ae7a52a4597bb6ba29e377e3, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457570, guid: c42a7173ae7a52a4597bb6ba29e377e3, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457570, guid: c42a7173ae7a52a4597bb6ba29e377e3, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 457570, guid: c42a7173ae7a52a4597bb6ba29e377e3, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 457570, guid: c42a7173ae7a52a4597bb6ba29e377e3, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: c42a7173ae7a52a4597bb6ba29e377e3, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &140036094
 GameObject:
   m_ObjectHideFlags: 0
@@ -4075,11 +4117,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2e334ee732d2f2429c01fb8e02dfd70, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnType: 0
   obj:
-  - {fileID: 139420, guid: c1be6b08f15faa84986eee54181bc0da, type: 2}
-  spawnTime: 0
-  lifetime: 10
-  spawnProbability: 100
+  - {fileID: 175748, guid: 162b4631efc007b4b92649c8e2ca501e, type: 2}
+  parentListToSpawnInto: {fileID: 0}
+  minSpawnTime: 3
+  maxSpawnTime: 3
   rangeX: 37.7999992
   rangeY: 11.3000002
   rangeZ: 10
@@ -15546,11 +15589,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d95327a355e5c1438093b0623d29b79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnType: 0
   obj:
-  - {fileID: 139420, guid: c1be6b08f15faa84986eee54181bc0da, type: 2}
-  spawnTime: 0
-  lifetime: 10
-  spawnProbability: 100
+  - {fileID: 175748, guid: 162b4631efc007b4b92649c8e2ca501e, type: 2}
+  parentListToSpawnInto: {fileID: 0}
+  minSpawnTime: 3
+  maxSpawnTime: 3
   range: 6
 --- !u!135 &1957242011
 SphereCollider:
