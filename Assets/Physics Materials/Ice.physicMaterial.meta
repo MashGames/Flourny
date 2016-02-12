@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Physics Materials/Ice.physicMaterial.meta
 guid: 0cb6d1205366b854886dbcba9e790bc6
 timeCreated: 1455303647
+=======
+guid: 335359ae7756feb4f8020b9ef31206d0
+timeCreated: 1455300437
+>>>>>>> refs/remotes/origin/master:Assets/Physics Materials/Ice.physicMaterial.meta
 licenseType: Pro
 NativeFormatImporter:
   userData: 
