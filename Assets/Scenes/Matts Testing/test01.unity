@@ -3053,7 +3053,7 @@ MonoBehaviour:
   target: {fileID: 104151911}
   playerBody: {fileID: 104151914}
   height: 5.4000001
-  heightDamping: .939999998
+  heightDamping: 1.42999995
   rotationYOffset: 0
   rotationDamping: 3
   yLookOffset: -1.01999998
