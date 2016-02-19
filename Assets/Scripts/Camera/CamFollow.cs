@@ -86,7 +86,9 @@ public class CamFollow : MonoBehaviour
 
         currentHeight = Mathf.Lerp(currentHeight, wantedHeight, actualHeightDamping * deltaTime);
 
-        myTransform.position -= currentRotation  * Vector3.forward * distance;
+		myTransform.rotation = currentRotation;
+
+        myTransform.position -= -Vector3.forward * distance;
 
         // Set the height of the camera
         myTransform.position = new Vector3(myTransform.position.x, currentHeight, myTransform.position.z);
