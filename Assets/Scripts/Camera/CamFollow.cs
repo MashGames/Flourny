@@ -8,7 +8,8 @@ public class CamFollow : MonoBehaviour
     public Transform target;
 	public Rigidbody playerBody;
 
-	[Header("Tunables")]
+    #region Tunables
+    [Header("Tunables")]
 
 	[Range(0.0f,20.0f)]
     public float height = 5.0f;
@@ -27,13 +28,18 @@ public class CamFollow : MonoBehaviour
 
 	[Range(-5.0f,5.0f)]
 	public float lookYLerpSpeed = 6.0f;
-	
-	[Tooltip("curve X = player velocity, where Y = camera distance (used for moving camera farther while player speeds up) ")]
+    #endregion
+
+
+    [Tooltip("curve X = player velocity, where Y = camera distance (used for moving camera farther while player speeds up) ")]
 	public AnimationCurve distancePerVelMultiplyerCurve;
+
 	[Range(0.0f,20.0f)]
 	public float baseDistance = 5.0f;
+
 	[Range(0.0f,20.0f)]
 	public float distanceLerpSpeed = 6.0f;
+
 	
     Transform myTransform;
 	float distance = 5.0f;
@@ -43,6 +49,8 @@ public class CamFollow : MonoBehaviour
     float wantedRotationAngle;
     float lookTargetY;
 
+
+    #region MonoUpdates
     void Awake()
     {
 
@@ -50,7 +58,6 @@ public class CamFollow : MonoBehaviour
     void Start()
     {
         myTransform = this.transform;
-        //myTransform.position = target.position;
         actualRotdamp = rotationDamping;
         actualHeightDamping = heightDamping;
         lookTargetY = myTransform.position.y + yLookOffset;
@@ -98,6 +105,9 @@ public class CamFollow : MonoBehaviour
         Vector3 lookTarget = new Vector3(target.position.x, lookTargetY, target.position.z);
         myTransform.LookAt(lookTarget);
     }
+    #endregion
+
+
     void SetLookTarget()
     {
         lookTargetY = Mathf.Lerp(lookTargetY, target.position.y + yLookOffset, lookYLerpSpeed * deltaTime);
